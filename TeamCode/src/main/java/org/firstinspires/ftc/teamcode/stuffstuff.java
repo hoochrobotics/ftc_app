@@ -16,16 +16,19 @@ public class stuffstuff extends LinearOpMode
     @Override
     public void runOpMode() throws InterruptedException
     {
+        //Maps motors for drive train and lift, respectively
         leftMotor = hardwareMap.dcMotor.get("leftMotor");
         rightMotor = hardwareMap.dcMotor.get("rightMotor");
         liftMotor = hardwareMap.dcMotor.get("liftMotor");
 
+        //Reverses motors
         leftMotor.setDirection(DcMotor.Direction.REVERSE);
 
         waitForStart();
 
         while(opModeIsActive())
         {
+            //Maps motors to the game controller
             leftMotor.setPower(-gamepad1.left_stick_y);
             rightMotor.setPower(-gamepad1.right_stick_y);
             liftMotor.setPower(0.4 * gamepad2.left_stick_y);
