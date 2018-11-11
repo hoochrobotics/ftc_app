@@ -13,7 +13,7 @@ public class stuffstuff extends LinearOpMode {
     private DcMotor liftMotor;
     private Servo clawServo;
     private static final double  ARM_EXTENDED_POSITION = 1.0;
-    private static final double ARM_RETRACTED_POSITION = 0.5;
+    private static final double ARM_RETRACTED_POSITION = 0.4;
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -31,9 +31,9 @@ public class stuffstuff extends LinearOpMode {
 
         while(opModeIsActive()) {
             //Maps motors to the game controller
-            leftMotor.setPower(-gamepad1.left_stick_y);
-            rightMotor.setPower(-gamepad1.right_stick_y);
-            liftMotor.setPower (-(gamepad2.left_stick_y * -gamepad2.left_stick_y));
+            leftMotor.setPower(gamepad1.left_stick_y);
+            rightMotor.setPower(gamepad1.right_stick_y);
+            liftMotor.setPower(0.35 * gamepad2.left_stick_y);
 
             if (gamepad2.a) {
                 clawServo.setPosition(ARM_EXTENDED_POSITION);
