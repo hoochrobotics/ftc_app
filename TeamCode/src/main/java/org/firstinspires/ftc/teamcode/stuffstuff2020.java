@@ -1,4 +1,4 @@
 package org.firstinspires.ftc.teamcode;
 
-public class stuffstuff2020 {
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 }
